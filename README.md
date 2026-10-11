@@ -152,17 +152,17 @@ flowchart TD
     UI <-->|"2. Requests accounts & signature"| MM
     UI -->|"3. POST /v3/files (Artwork)"| PinataAPI
     PinataAPI -->|"Stores binary"| IPFSArtwork
-    PinataAPI -->>|"Returns Image CID"| UI
+    PinataAPI -->|"Returns Image CID"| UI
     
     UI -->|"4. Generates JSON & POST /v3/files (Metadata)"| PinataAPI
     PinataAPI -->|"Stores JSON with Image CID"| IPFSMetadata
-    PinataAPI -->>|"Returns Metadata CID"| UI
+    PinataAPI -->|"Returns Metadata CID"| UI
 
     UI -->|"5. ethers.Contract.mintNFT(ipfs://CID)"| MM
     MM -->|"6. Signs & broadcasts transaction"| SepoliaRPC
     SepoliaRPC -->|"7. Executes mintNFT()"| Contract
     Contract -->|"8. Emits Transfer(0x0, user, tokenId)"| SepoliaRPC
-    SepoliaRPC -->>|"9. Transaction Receipt + Logs"| UI
+    SepoliaRPC -->|"9. Transaction Receipt + Logs"| UI
     
     UI -.->|"10. View on Etherscan"| Etherscan
     UI -->|"11. Resolves tokenURI via HTTP Gateways"| IPFSArtwork
