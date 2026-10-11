@@ -1,0 +1,23 @@
+{
+  "name": "contracts-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^4.0.15",
+    "@types/node": "^22.20.1",
+    "dotenv": "^17.4.2",
+    "hardhat": "^3.13.0",
+    "typescript": "~6.0.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.2"
+  }
+}
